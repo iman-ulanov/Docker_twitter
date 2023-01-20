@@ -9,7 +9,7 @@ class StatusTypeSerializer(serializers.ModelSerializer):
     class Meta:
         model = StatusType
         fields = '__all__'
-
+        read_only_fields = 'slug'
 
 class TweetSerializer(serializers.ModelSerializer):
     statuses = serializers.ReadOnlyField(source='get_status_count')
